@@ -3,7 +3,7 @@ object pepe {
   var diasFaltando = 0
 
   method netoSegunCategoria(){
-    return (categoria.cadete()) //ESTOY HARDCODEANDO
+    return (categoria.cadete()) //ESTOY HARDCODEANDO?
   }
 
   method faltarDias(_diasFaltando){
@@ -13,10 +13,10 @@ object pepe {
   method diasFaltando(){
     return diasFaltando
   }
-    //ENCAPSULAMIENTO/REFERENCIA GLOBAL
-  method sueldo(neto, bonoPorResultado, bonoPresentismo){
+    //ENCAPSULAMIENTO/REFERENCIA GLOBAL ESTA BIEN APLICADO?
+  method sueldo(bonoResultado, bonoPresentismo){
 
-    return self.netoSegunCategoria() + bonoPorResultado() + bonoPresentismo(self)
+    return self.netoSegunCategoria() + bonoResultado + bonoPresentismo
   }
 
 }
@@ -37,7 +37,7 @@ object bonoPorResultado{
     method bonoPorPorcentaje(empleado){
         const porcentaje = 0.1 //10%
 
-        return empleado.neto()*porcentaje
+        return empleado.netoSegunCategoria()*porcentaje
     }
 
     method montoFijo(){

@@ -48,8 +48,6 @@ describe "Bono por presentismo"{
 
 describe "Sueldo de pepe" {
   test "Sueldo de pepe siendo cadete, bono x resultado por porcentaje, sin faltar ningun dia" {
-
-	
-
+	assert.equals(20000+2000+2000, pepe.sueldo(bonoPorResultado.bonoPorPorcentaje(pepe),bonoPorPresentismo.normal(pepe)))
   }
 }
