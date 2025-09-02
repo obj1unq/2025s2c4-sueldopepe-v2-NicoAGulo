@@ -14,6 +14,11 @@ object pepe {
     return diasFaltando
   }
 
+  method sueldo(neto, bonoResultado, bonoPresentismo){
+
+    return self.netoSegunCategoria() + bonoResultado(self) + bonoPresentismo(self)
+  }
+
 }
 
 object categoria {
