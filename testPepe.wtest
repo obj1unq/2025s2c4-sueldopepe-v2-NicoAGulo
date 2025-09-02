@@ -1,10 +1,53 @@
 import pepe.*
 
-describe "Sueldo Pepe" {
+describe "Bono por resultados" {
 	
-	test "Test 1" {
-		//TODO: Implementame
+	test "neto de pepe es 20000 por ser cadete" {
+		assert.equals(20000, pepe.netoSegunCategoria())
 	}
 
+	test "El bono de pepe es el 10% del neto"{
+		assert.equals(2000, bonoPorResultado.bonoPorPorcentaje(pepe))
+	}
+
+	test "El bono de pepe es un monto fijo"{
+		assert.equals(800, bonoPorResultado.montoFijo())
+	}
 	
+	test "El bono de pepe es nada"{
+		assert.equals(0, bonoPorResultado.nada())
+	}
+}
+
+describe "Bono por presentismo"{
+	
+	test "Bono por presentismo normal para pepe sin faltar" {
+		pepe.faltarDias(0)
+
+		assert.equals(2000, bonoPorPresentismo.normal(pepe))
+	}
+
+	test "Bono por presentismo normal para pepe faltando 1 dia" {
+		pepe.faltarDias(1)
+
+		assert.equals(1000, bonoPorPresentismo.normal(pepe))
+	}
+
+	test "Bono por presentismo normal para pepe faltando 2 dias o mas" {
+		pepe.faltarDias(2)
+
+		assert.equals(0, bonoPorPresentismo.normal(pepe))
+
+		pepe.faltarDias(22)
+
+		assert.equals(0, bonoPorPresentismo.normal(pepe))
+
+	}
+
+}
+
+describe "Sueldo de pepe" {
+  test "Sueldo de pepe siendo cadete, bono x resultado por porcentaje, sin faltar ningun dia" {
+	assert.equals(20000+2000+2000, pepe.sueldo(bonoPorResultado.bonoPorPorcentaje(pepe),bonoPorPresentismo.normal(pepe)))
+  }
 }
