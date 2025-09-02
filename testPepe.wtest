@@ -50,5 +50,6 @@ describe "Sueldo de pepe" {
   test "Sueldo de pepe siendo cadete, bono x resultado por porcentaje, sin faltar ningun dia" {
 
 	
+
   }
 }

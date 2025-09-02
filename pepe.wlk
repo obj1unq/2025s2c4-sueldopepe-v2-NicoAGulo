@@ -1,9 +1,9 @@
 object pepe {
-
+    //USAR VARIABLE DE CATEGORIA
   var diasFaltando = 0
 
   method netoSegunCategoria(){
-    return (categoria.cadete())
+    return (categoria.cadete()) //ESTOY HARDCODEANDO
   }
 
   method faltarDias(_diasFaltando){
@@ -13,10 +13,10 @@ object pepe {
   method diasFaltando(){
     return diasFaltando
   }
+    //ENCAPSULAMIENTO/REFERENCIA GLOBAL
+  method sueldo(neto, bonoPorResultado, bonoPresentismo){
 
-  method sueldo(neto, bonoResultado, bonoPresentismo){
-
-    return self.netoSegunCategoria() + bonoResultado(self) + bonoPresentismo(self)
+    return self.netoSegunCategoria() + bonoPorResultado() + bonoPresentismo(self)
   }
 
 }
